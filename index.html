@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Смоленский Мёд | Натуральный продукт</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Шапка с навигацией и бургер-меню (без JS) -->
+    <header>
+        <div class="container header-inner">
+            <a href="#" class="logo">Смоленский Мёд</a>
+            
+            <!-- Скрытый чекбокс для работы бургер-меню -->
+            <input type="checkbox" id="burger" class="burger-checkbox">
+            <label for="burger" class="burger-label">
+                <span></span><span></span><span></span>
+            </label>
+
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="#about">О нас</a></li>
+                    <li><a href="#gallery">Галерея</a></li>
+                    <li><a href="#tariffs">Цены</a></li>
+                    <li><a href="#contact">Заказ</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Герой-секция (Flexbox) -->
+        <section class="hero">
+            <div class="container hero-content">
+                <h1>Настоящий мёд из сердца Смоленщины</h1>
+                <p>100% натуральный продукт с семейной пасеки. Энергия природы в каждой ложке.</p>
+                <a href="#contact" class="btn">Заказать сейчас</a>
+            </div>
+        </section>
+
+        <!-- О продукте -->
+        <section id="about" class="container about-section">
+            <h2>Почему выбирают наш мёд?</h2>
+            <ul class="features-list">
+                <li>Экологически чистый район сбора</li>
+                <li>Без добавления сахара и сиропов</li>
+                <li>Бережная ручная фасовка</li>
+            </ul>
+        </section>
+
+        <!-- Галерея (CSS Grid) -->
+        <section id="gallery" class="container gallery-section">
+            <h2>Наша пасека и продукция</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="images/product-1.jpg" alt="Липовый мёд в банке">
+                    <p>Свежий липовый мёд</p>
+                </div>
+                <div class="gallery-item">
+                    <img src="images/product-2.jpg" alt="Пчелиные соты">
+                    <p>Натуральные соты</p>
+                </div>
+                <div class="gallery-item">
+                    <img src="images/product-3.jpg" alt="Пасека летом">
+                    <p>Наша пасека</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Таблица/тарифы -->
+        <section id="tariffs" class="container tariffs-section">
+            <h2>Стоимость продукции</h2>
+            <div class="table-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Сорт мёда</th>
+                            <th>Объем 0.5л</th>
+                            <th>Объем 1л</th>
+                            <th>Опт (от 5л)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Цветочный</td>
+                            <td>400 руб.</td>
+                            <td>750 руб.</td>
+                            <td>600 руб/л</td>
+                        </tr>
+                        <tr>
+                            <td>Липовый</td>
+                            <td>500 руб.</td>
+                            <td>900 руб.</td>
+                            <td>800 руб/л</td>
+                        </tr>
+                        <tr>
+                            <td>Гречишный</td>
+                            <td>450 руб.</td>
+                            <td>800 руб.</td>
+                            <td>700 руб/л</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Форма заказа -->
+         <section id="contact" class="container form-section">
+            <h2>Оставить заявку</h2>
+            <form action="#" class="order-form">
+                <input type="text" name="name" placeholder="Ваше имя" required>
+                <!-- Валидация Email через атрибут pattern -->
+                <input type="email" name="email" placeholder="Ваш Email" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" title="Введите корректный email (например: name@mail.com)">
+                <textarea name="comment" rows="4" placeholder="Какой мёд вас интересует?"></textarea>
+                <button type="submit" class="btn">Отправить заявку</button>
+            </form>
+        </section>
+    </main>
+
+    <!-- Подвал (Flexbox) -->
+    <footer>
+        <div class="container footer-inner">
+            <div class="footer-contacts">
+                <p>Контакты: +7 (999) 123-45-67</p>
+                <p>Email: info@smolmed.ru</p>
+            </div>
+            <div class="footer-social">
+                <a href="#">ВКонтакте</a>
+                <a href="#">Telegram</a>
+            </div>
+            <p class="copyright">&copy; 2026 Смоленский Мёд. Все права защищены.</p>
+        </div>
+    </footer>
+
+</body>
+</html>

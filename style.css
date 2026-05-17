@@ -1,0 +1,224 @@
+/* --- CSS Переменные --- */
+:root {
+    --brand-primary: #f0a500; /* Медовый цвет */
+    --brand-dark: #333333;
+    --brand-light: #fffcf5;
+    --font-main: 'Segoe UI', Tahoma, sans-serif;
+    --spacing-md: 2rem;
+    --transition-base: all 0.3s ease;
+}
+
+/* --- Базовые стили (Mobile First) --- */
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    font-family: var(--font-main);
+    background-color: var(--brand-light);
+    color: var(--brand-dark);
+    line-height: 1.6;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: var(--spacing-md) 0;
+}
+
+h1, h2 {
+    text-align: center;
+    color: var(--brand-dark);
+}
+
+/* --- Кнопки и интерактив --- */
+.btn {
+    display: inline-block;
+    background-color: var(--brand-primary);
+    color: #fff;
+    padding: 12px 24px;
+    text-decoration: none;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: var(--transition-base);
+    text-align: center;
+}
+
+.btn:hover, .btn:focus {
+    background-color: #d18f00;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(240, 165, 0, 0.4);
+}
+
+/* --- Шапка и Бургер-меню --- */
+header {
+    background-color: var(--brand-dark);
+    color: #fff;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.header-inner {
+    padding: 1rem 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.logo {
+    color: var(--brand-primary);
+    text-decoration: none;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+/* Логика бургер-меню (без JS) */
+.burger-checkbox {
+    display: none;
+}
+
+.burger-label {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+}
+
+.burger-label span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: #fff;
+    transition: var(--transition-base);
+}
+
+.main-nav {
+    display: none; /* Скрыто на мобильных по умолчанию */
+    width: 100%;
+    margin-top: 1rem;
+}
+
+.main-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    text-align: center;
+}
+
+.main-nav a {
+    color: #fff;
+    text-decoration: none;
+    transition: var(--transition-base);
+}
+
+.main-nav a:hover {
+    color: var(--brand-primary);
+}
+
+/* Показываем меню, если чекбокс нажат */
+.burger-checkbox:checked ~ .main-nav {
+    display: block;
+}
+
+/* --- Герой-секция --- */
+.hero {
+    background-color: #ffe8b3;
+    text-align: center;
+    padding: 4rem 0;
+}
+
+.hero h1 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+/* --- О продукте (Псевдоэлементы) --- */
+.features-list {
+    list-style: none;
+    padding: 0;
+}
+
+.features-list li {
+    margin-bottom: 1rem;
+    position: relative;
+    padding-left: 30px;
+}
+
+.features-list li::before {
+    content: "🍯";
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+/* --- Галерея (CSS Grid - 1 колонка на мобилках) --- */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+}
+
+.gallery-item {
+    background: #fff;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+/* --- Таблица (Скролл на мобилках) --- */
+.table-wrapper {
+    overflow-x: auto; /* Позволяет скроллить таблицу вбок */
+}
+
+table {
+    width: 100%;
+    min-width: 600px;
+    border-collapse: collapse;
+    background: #fff;
+}
+
+th, td {
+    padding: 12px;
+    border: 1px solid #ddd;
+    text-align: center;
+}
+
+th {
+    background-color: var(--brand-primary);
+    color: #fff;
+}
+
+/* --- Форма --- */
+.order-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.order-form input, .order-form textarea {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-family: var(--font-main);
+}
+
+.order-form input:focus, .order-form textarea:focus {
+    outline: none;
